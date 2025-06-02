@@ -19,8 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title:
-      "I aspire to deliver solutions beyond time zones and borders.",
+    title: "I aspire to deliver solutions beyond time zones and borders.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -107,7 +106,13 @@ export const projects = [
     title: "ReferralHub",
     des: "ReferralHub helps businesses launch campaigns, track referrals, and analyze performance—all in one place.",
     img: "/p4-referralhub.webp",
-    iconLists: ["/re.svg", "/tail.svg", "/mongo.svg", "/ex.webp", "/gemini.webp"],
+    iconLists: [
+      "/re.svg",
+      "/tail.svg",
+      "/mongo.svg",
+      "/ex.webp",
+      "/gemini.webp",
+    ],
     link: "https://referral-hub-alpha.vercel.app/",
   },
 ];
