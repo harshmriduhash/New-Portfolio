@@ -52,7 +52,6 @@ export const BentoGridItem = ({
   const leftLists = ["Next.js", "Express", "Typescript"];
   const rightLists = ["React.js", "MongoDB", "Node.js"];
 
-
   const [copied, setCopied] = useState(false);
   const confettiCanvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -65,21 +64,20 @@ export const BentoGridItem = ({
   //   },
   // }
 
-  
   // Create a safer confetti function
   const triggerConfetti = () => {
     if (confettiCanvasRef.current) {
       const myCanvas = confettiCanvasRef.current;
-      const myConfetti = confetti.create(myCanvas, { 
+      const myConfetti = confetti.create(myCanvas, {
         resize: true,
-        useWorker: false // Disable worker to avoid transferControlToOffscreen issue
+        useWorker: false, // Disable worker to avoid transferControlToOffscreen issue
       });
-      
+
       return myConfetti({
         particleCount: 150,
         spread: 70,
         origin: { y: 0.6, x: 0.5 },
-        colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'],
+        colors: ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff"],
         // defaultOptions
       });
     }
@@ -89,7 +87,7 @@ export const BentoGridItem = ({
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
     setCopied(true);
-    
+
     // Only trigger confetti if we're in the right div (id === 6)
     if (id === 6) {
       // We'll use a small timeout to ensure the canvas is properly mounted
@@ -137,8 +135,8 @@ export const BentoGridItem = ({
         {id === 6 && (
           <>
             <div className="absolute inset-0 z-10 pointer-events-none">
-              <canvas 
-                ref={confettiCanvasRef} 
+              <canvas
+                ref={confettiCanvasRef}
                 className="absolute inset-0 w-full h-full pointer-events-none"
               />
             </div>
