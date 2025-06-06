@@ -78,15 +78,21 @@ export const FloatingNav = ({
               href={navItem.link}
               className="relative dark:text-neutral-50 flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 hover:bg-white/10 transition-colors duration-300 rounded-full py-1 px-2"
             >
-
               <span className="hidden xs:block sm:hidden">{navItem.icon}</span>
-              <span className="!cursor-pointer text-xs xs:text-sm whitespace-nowrap">{navItem.name}</span>
+              <span className="!cursor-pointer text-xs xs:text-sm whitespace-nowrap">
+                {navItem.name}
+              </span>
             </Link>
           ))}
         </div>
 
         <button className="border bg-purple/[0.1] text-xs sm:text-sm font-medium relative border-neutral-200 text-white px-3 sm:px-4 py-2 sm:py-2 rounded-full hover:bg-gradient-to-b from-blue-800/[0.3] to-purple/[0.3]">
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap"
+          >
             Resume
           </a>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
@@ -138,7 +144,9 @@ export const FloatingNav = ({
                     role="menuitem"
                   >
                     <div className="flex items-center">
-                      {navItem.icon && <span className="mr-2">{navItem.icon}</span>}
+                      {navItem.icon && (
+                        <span className="mr-2">{navItem.icon}</span>
+                      )}
                       <span className="text-xs">{navItem.name}</span>
                     </div>
                   </Link>
